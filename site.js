@@ -3,11 +3,18 @@ const viewers = [...document.querySelectorAll('.viewer-shell')];
 let expandedViewer = null;
 let previousFocus = null;
 let inertSiblings = [];
-// Keep Unity UI text at a stable Full HD viewport, including on high-DPI phones.
+// Decide once so rotation/fullscreen cannot start extra Unity runtimes.
+const constrainedPlayback = matchMedia('(max-width: 900px), (any-pointer: coarse)').matches;
+// Keep Unity UI text at a stable viewport, with a smaller render surface on mobile.
 // Resizing a small Unity canvas left its existing text glyphs visibly blurred.
 // Cross-origin frames can report a different pixel ratio from the parent page.
-const viewerWidth = 1920;
-const viewerHeight = 1080;
+const viewerWidth = constrainedPlayback ? 1280 : 1920;
+const viewerHeight = constrainedPlayback ? 720 : 1080;
+
+if (constrainedPlayback) {
+  const loadingNote = document.querySelector('[data-loading-note]');
+  if (loadingNote) loadingNote.textContent = '원하는 작업물의 재생을 눌러 주세요. 한 번에 하나씩 감상할 수 있습니다.';
+}
 
 function setStatus(viewer, message) {
   viewer.querySelector('.viewer-status').textContent = message;
@@ -78,6 +85,9 @@ function stopViewer(viewer) {
 
 function playViewer(viewer) {
   if (viewer.querySelector('iframe')) return;
+  if (constrainedPlayback) {
+    viewers.filter(other => other !== viewer && other.querySelector('iframe')).forEach(stopViewer);
+  }
   viewer.dataset.state = 'active';
   viewer.querySelector('[data-play]').hidden = true;
   viewer.querySelector('[data-stop]').hidden = false;
@@ -89,7 +99,7 @@ function playViewer(viewer) {
   frame.allowFullscreen = true;
   frame.loading = 'eager';
   frame.referrerPolicy = 'strict-origin-when-cross-origin';
-  // Each card retains its runtime; iframe load is not treated as Unity readiness.
+  // iframe load is not treated as Unity readiness.
   frame.src = viewer.dataset.url;
   viewer.querySelector('.viewer-mount').append(frame);
 }
@@ -136,7 +146,7 @@ viewers.forEach(viewer => {
     viewer.querySelector('.viewer-help').open = false;
     viewer.querySelector(expandedViewer === viewer ? '[data-close]' : '[data-fullscreen]').focus({ preventScroll: true });
   });
-  playViewer(viewer);
+  if (!constrainedPlayback) playViewer(viewer);
 });
 
 document.addEventListener('fullscreenchange', () => {
