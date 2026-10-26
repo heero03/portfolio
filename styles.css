@@ -14,5 +14,6 @@ button{font:inherit;color:inherit;cursor:pointer}button:focus-visible,summary:fo
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
 @media(max-width:720px){.about-intro p.introduction-lead{font-size:24px}}
 .viewer-mount iframe{width:var(--viewer-width,1920px);height:var(--viewer-height,1080px);left:50%;top:50%;right:auto;bottom:auto;transform:translate(-50%,-50%) scale(var(--viewer-scale,1));transform-origin:center}
+.viewer-shell[data-viewer="spine-pair"] .viewer-mount iframe{inset:0;width:100%;height:100%;transform:none}
 .career-history{list-style:none;margin:0;padding:0;display:grid;gap:14px}.career-history li{display:grid;grid-template-columns:170px minmax(0,1fr);gap:20px;align-items:baseline}.career-period{color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
 @media(max-width:720px){.career-history li{grid-template-columns:138px minmax(0,1fr);gap:12px;font-size:14px}}
