@@ -17,3 +17,4 @@ button{font:inherit;color:inherit;cursor:pointer}button:focus-visible,summary:fo
 .viewer-shell[data-viewer="spine-pair"] .viewer-mount iframe,.viewer-shell[data-viewer="ssp-pc"] .viewer-mount iframe,.viewer-shell[data-viewer="ssp-boss"] .viewer-mount iframe,.viewer-shell[data-viewer="spine-shoot"] .viewer-mount iframe{inset:0;width:100%;height:100%;transform:none}
 .career-history{list-style:none;margin:0;padding:0;display:grid;gap:14px}.career-history li{display:grid;grid-template-columns:170px minmax(0,1fr);gap:20px;align-items:baseline}.career-period{color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
 @media(max-width:720px){.career-history li{grid-template-columns:138px minmax(0,1fr);gap:12px;font-size:14px}}
+.project-video-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}.project-video-pair h3{font-size:18px;font-weight:500;margin-bottom:12px}@media(max-width:720px){.project-video-pair{gap:12px}}
