@@ -1,19 +1,19 @@
 {
-  "version": "20261026-v4",
+  "version": "20261026-v5",
   "resourceIds": [
     "gal_test",
     "witch_test"
   ],
   "files": {
     "loader": {
-      "url": "Build/7ebda61325584239e9d5683ac6e869be.loader.js",
+      "url": "Build/ecadc3a371eb8bbb6c8a97402e60d451.loader.js",
       "size": 110344,
-      "sha256": "504f07e70a1f963724c90afe245457282ee7861c4f762b71d7e0402dc1604854"
+      "sha256": "565d12582633a36eb24bcace715e315cf36360dcff3f0cc370490d9c7e382711"
     },
     "data": {
-      "url": "Build/bb333ae55b1d23566b01aae0f318ead8.data.unityweb",
-      "size": 24017231,
-      "sha256": "1875b9b1e82c6c04d535ebf2ab2515a8770d481fe74d653ba54fd432c878c2c2"
+      "url": "Build/65910c2b529fd1882ac972a351f4b231.data.unityweb",
+      "size": 24013347,
+      "sha256": "15b1e76c6abf31fea1a6642f9927f575fb2dc61746ff6f485a2faddbb1bb8a34"
     },
     "framework": {
       "url": "Build/59067a4ae945abefbece8662d9c0523e.framework.js.unityweb",
@@ -21,9 +21,9 @@
       "sha256": "5e75fdf2b268b7b13dad6dfcdb296aa4e0fb572e7013e04a9634b3e48e6583de"
     },
     "code": {
-      "url": "Build/c7a8fdac99477a05a163008108b9e8f5.wasm.unityweb",
-      "size": 8305239,
-      "sha256": "2600c8f633d52889ca1ea61aec62db101b63a574e39847382856bdac8583851c"
+      "url": "Build/b93f097664f0654cd63104c1b060a496.wasm.unityweb",
+      "size": 8305983,
+      "sha256": "fb9995a9e3a37215074ef2bf8cac32f904ed5d75f01d6b56ee5ef811dde2a263"
     }
   }
 }
