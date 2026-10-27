@@ -1,5 +1,5 @@
 {
-  "version": "20261027-v6",
+  "version": "20261027-v7",
   "resourceIds": [
     "gal_test",
     "witch_test"
@@ -11,9 +11,9 @@
       "sha256": "565d12582633a36eb24bcace715e315cf36360dcff3f0cc370490d9c7e382711"
     },
     "data": {
-      "url": "Build/5b47331b468d7197d3d45ca2dbae4c12.data.unityweb",
-      "size": 24046890,
-      "sha256": "89a6de2bb2c82bfe5970ff716bb2138597897cea69e2b51132b6a43fff4602e4"
+      "url": "Build/8548356ef31dd2ed106eea2ad974f392.data.unityweb",
+      "size": 24038905,
+      "sha256": "821bbe98c4f851e245e77f4d73489ebfa16f08ef74d9fe3ce17438358fa9295d"
     },
     "framework": {
       "url": "Build/59067a4ae945abefbece8662d9c0523e.framework.js.unityweb",
