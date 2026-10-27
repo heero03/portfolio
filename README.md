@@ -10,7 +10,7 @@ Google Sites의 공개 콘텐츠를 옮긴 정적 포트폴리오입니다. 페�
 - `assets/spine-shoot.webp`: 슈팅 캐릭터 뷰어의 실제 장면을 960×540으로 최적화한 카드 이미지
 - `viewers/spine-pair/`: gal_test와 witch_test를 재생하는 새 Spine 일러스트 뷰어의 WebGL 빌드
 
-작업물은 PC SSP ANIMATION → BOSS SSP ANIMATION → Spine 슈팅 캐릭터 → 새 Spine 일러스트 뷰어 순서입니다. 대표 작업물은 새 Spine 일러스트 뷰어이며 목록의 같은 플레이어로 연결됩니다. 일반 PC에서는 페이지가 열리면 Sites에 게시된 두 SSP 뷰어·슈팅 캐릭터 뷰어와 `viewers/spine-pair/`의 새 뷰어, 총 네 개를 자동으로 불러옵니다. 모바일·터치 기기 또는 폭 900px 이하로 연 페이지에서는 미리보기를 먼저 표시하고, ‘여기서 재생’이나 전체화면을 누른 작업물 하나만 불러옵니다. 다른 작업물을 선택하면 이전 뷰어를 종료하여 동시 실행을 막습니다. 이 정책은 페이지를 여는 시점에 정하므로 화면 회전이나 전체화면 전환으로 바뀌지 않습니다. ‘재생 종료’로 멈춘 작업물은 ‘여기서 재생’으로 다시 불러올 수 있습니다. 개별 Unity 뷰어도 데이터와 메모리를 많이 사용하므로 모든 휴대전화에서 실행을 보장하지는 않습니다.
+작업물은 PC SSP ANIMATION → BOSS SSP ANIMATION → Spine 슈팅 캐릭터 → 새 Spine 일러스트 뷰어 순서입니다. 대표 작업물은 새 Spine 일러스트 뷰어이며 목록의 같은 플레이어로 연결됩니다. PC와 모바일 모두 미리보기를 먼저 표시하고, ‘여기서 재생’이나 전체화면을 누른 작업물 하나만 불러옵니다. 페이지를 열기만 해서는 Unity 뷰어를 실행하지 않습니다. 다른 작업물을 선택하면 이전 뷰어를 종료하여 동시 실행을 막습니다. 기존 반응형 화면 크기와 고해상도 전체화면 처리를 유지하며 화면 회전이나 전체화면 전환으로 뷰어를 다시 만들지 않습니다. ‘재생 종료’로 멈춘 작업물은 ‘여기서 재생’으로 다시 불러올 수 있습니다. 개별 Unity 뷰어도 데이터와 메모리를 많이 사용하므로 모든 휴대전화에서 실행을 보장하지는 않습니다.
 
 - [PC SSP ANIMATION](https://pc-ssp-animation.millialdo82.chatgpt.site): LISBETH, VIOLET, JAN, ETNA, ASHERAD, SARAH, SIBYLLA, RAYRING의 8종.
 - [BOSS SSP ANIMATION](https://boss-ssp-animation.millialdo82.chatgpt.site): PARMANA, ELENARRUND, VIRTUS, PAZIONA, INGRID, FOREST_BEAST, KID_BOSS의 7종.
