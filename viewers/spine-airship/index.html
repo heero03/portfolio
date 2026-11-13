@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="ko" data-state="loading">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0b0e13">
+  <title>Airship — Spine 4.3 일러스트 뷰어</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="viewer.css">
+  <script src="viewer.js" defer></script>
+</head>
+<body>
+  <main>
+    <canvas id="player" tabindex="0" aria-label="Airship 애니메이션. 그림을 클릭하면 시작 연출부터 다시 재생합니다."></canvas>
+    <section id="loading" role="status" aria-live="polite">
+      <h1>Airship</h1><p id="message">일러스트를 불러오는 중입니다.</p>
+      <progress id="progress" max="1" value="0" aria-label="로딩 진행률"></progress>
+      <button id="retry" type="button" hidden>다시 불러오기</button>
+    </section>
+    <noscript>뷰어를 재생하려면 JavaScript를 켜 주세요.</noscript>
+  </main>
+</body>
+</html>
