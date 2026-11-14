@@ -4,14 +4,14 @@ Google Sites의 공개 콘텐츠를 옮긴 정적 포트폴리오입니다. 페�
 
 - `index.html`: 대표 작업물, 5개 애니메이션 작업, 사용 도구, 연락처
 - `about.html`: 소개, skills, 업무 경력, 학력
-- `projects.html`: Goddess order 영상, 식혼도 시리즈 영상 2열과 project 'ZERO' 이미지
+- `projects.html`: Goddess order 영상, 식혼도 시리즈 영상(데스크톱 2열·모바일 1열)과 project 'ZERO' 이미지
 - `assets/`: 사용자가 제공한 이미지와 실제 뷰어에서 캡처한 작업물 이미지
 - `assets/ssp-pc.png`, `assets/ssp-boss.png`: 각 SSP 뷰어의 실제 1920×1080 장면 캡처
 - `assets/spine-shoot.webp`: 슈팅 캐릭터 뷰어의 실제 장면을 960×540으로 최적화한 카드 이미지
 - `viewers/spine-pair/`: gal_test와 witch_test를 재생하는 새 Spine 일러스트 뷰어의 WebGL 빌드
 - `viewers/spine-airship/`: Spine 4.3 Airship 픽업 일러스트 뷰어의 WebGL 빌드. 마지막 단독 행에서 두 열 전체 폭으로 표시합니다. 12초 시작 연출 후 13초 idle을 반복하고 그림 클릭으로 처음부터 재생합니다. Playback의 idle_in·idle을 누르면 해당 동작을 처음부터 재생하며, 본과 물리 상태를 초기화하여 이전 동작과 블렌딩하지 않습니다. 2026-11-14 수정 리소스를 반영했습니다. Layer 1의 기본 세팅 크기로 클리핑하며 애니메이션 중 경계를 변경하지 않습니다.
 
-작업물은 PC SSP ANIMATION → BOSS SSP ANIMATION → Spine 슈팅 캐릭터 → 새 Spine 일러스트 뷰어 순서입니다. 대표 작업물은 새 Spine 일러스트 뷰어이며 목록의 같은 플레이어로 연결됩니다. PC와 모바일 모두 미리보기를 먼저 표시하고, ‘여기서 재생’이나 전체화면을 누른 작업물 하나만 불러옵니다. 페이지를 열기만 해서는 Unity 뷰어를 실행하지 않습니다. 다른 작업물을 선택하면 이전 뷰어를 종료하여 동시 실행을 막습니다. 기존 반응형 화면 크기와 고해상도 전체화면 처리를 유지하며 화면 회전이나 전체화면 전환으로 뷰어를 다시 만들지 않습니다. ‘재생 종료’로 멈춘 작업물은 ‘여기서 재생’으로 다시 불러올 수 있습니다. 개별 Unity 뷰어도 데이터와 메모리를 많이 사용하므로 모든 휴대전화에서 실행을 보장하지는 않습니다.
+작업물은 PC SSP ANIMATION → BOSS SSP ANIMATION → Spine 슈팅 캐릭터 → 새 Spine 일러스트 뷰어 순서입니다. 대표 작업물은 Airship 픽업 일러스트 애니메이션이며 목록의 같은 플레이어로 연결됩니다. PC와 모바일 모두 미리보기를 먼저 표시하고, ‘여기서 재생’이나 전체화면을 누른 작업물 하나만 불러옵니다. 페이지를 열기만 해서는 Unity 뷰어를 실행하지 않습니다. 다른 작업물을 선택하면 이전 뷰어를 종료하여 동시 실행을 막습니다. 기존 반응형 화면 크기와 고해상도 전체화면 처리를 유지하며 화면 회전이나 전체화면 전환으로 뷰어를 다시 만들지 않습니다. ‘재생 종료’로 멈춘 작업물은 ‘여기서 재생’으로 다시 불러올 수 있습니다. 개별 Unity 뷰어도 데이터와 메모리를 많이 사용하므로 모든 휴대전화에서 실행을 보장하지는 않습니다.
 
 - [PC SSP ANIMATION](https://pc-ssp-animation.millialdo82.chatgpt.site): LISBETH, VIOLET, JAN, ETNA, ASHERAD, SARAH, SIBYLLA, RAYRING의 8종.
 - [BOSS SSP ANIMATION](https://boss-ssp-animation.millialdo82.chatgpt.site): PARMANA, ELENARRUND, VIRTUS, PAZIONA, INGRID, FOREST_BEAST, KID_BOSS의 7종.
@@ -33,3 +33,5 @@ GitHub Pages는 `main` 브랜치의 루트(`/`)를 게시하도록 설정합니�
 원본: https://sites.google.com/view/heero03portfolio/홈
 
 콘텐츠·이미지·애니메이션의 기존 권리는 원 권리자에게 있습니다. 이 저장소는 별도의 재사용 라이선스를 부여하지 않습니다.
+
+2026-11-14 디자인 정리: Featured는 Airship으로 연결합니다. 다섯 작업의 제목·설명을 미리보기 앞에 표시하고, 바로가기와 그림을 가리지 않는 제어 줄을 제공합니다. 미리보기는 원본 캡처의 작품 영역만 표시하며 실제 뷰어 화면과 바이너리는 그대로 유지합니다. 프로젝트 영상은 로드 중 공식 썸네일을 표시합니다. 기존 색상·서체·사실 문안과 모든 작품은 보존했습니다.

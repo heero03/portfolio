@@ -1,4 +1,21 @@
 'use strict';
+// External video documents may take a moment to arrive, especially when lazy-loaded.
+document.querySelectorAll('.project-video iframe').forEach(frame => {
+  const loading = document.createElement('p');
+  loading.className = 'video-loading';
+  loading.setAttribute('role', 'status');
+  const poster = document.createElement('img');
+  poster.src = frame.parentElement.dataset.poster;
+  poster.alt = '';
+  poster.loading = 'lazy';
+  const label = document.createElement('span');
+  label.textContent = 'YouTube 영상 불러오는 중';
+  loading.append(poster, label);
+  frame.parentElement.append(loading);
+  const loaded = () => { loading.hidden = true; };
+  frame.addEventListener('load', loaded, { once: true });
+  if (document.readyState === 'complete') loaded();
+});
 const viewers = [...document.querySelectorAll('.viewer-shell')];
 let expandedViewer = null;
 let previousFocus = null;
