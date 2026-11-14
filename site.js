@@ -20,6 +20,7 @@ const viewers = [...document.querySelectorAll('.viewer-shell')];
 let expandedViewer = null;
 let previousFocus = null;
 let inertSiblings = [];
+let keyboardExpansion = false;
 // Decide the render size once so rotation/fullscreen preserves image quality.
 const constrainedPlayback = matchMedia('(max-width: 900px), (any-pointer: coarse)').matches;
 // Keep Unity UI text at a stable viewport, with a smaller render surface on mobile.
@@ -35,6 +36,21 @@ function setStatus(viewer, message) {
 function updateExpansionButtons(viewer, expanded) {
   viewer.querySelector('[data-fullscreen]').hidden = expanded;
   viewer.querySelector('[data-close]').hidden = !expanded;
+}
+
+function focusPlayback(viewer, fallback) {
+  // Unity pauses when its frame loses focus. Resizing that paused canvas can
+  // clear its drawing buffer, so return focus without sending a replay click.
+  const frame = viewer.querySelector('iframe');
+  (frame || fallback).focus({ preventScroll: true });
+  if (frame && keyboardExpansion) {
+    // Allow the resized player to draw, then keep keyboard users on the controls.
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      if (document.activeElement === frame && fallback.isConnected && !fallback.hidden) {
+        fallback.focus({ preventScroll: true });
+      }
+    }));
+  }
 }
 
 function restoreExpansion() {
@@ -53,7 +69,7 @@ function restoreExpansion() {
   const focusTarget = previousFocus?.isConnected && !previousFocus.hidden
     ? previousFocus : viewer.querySelector('[data-fullscreen]');
   previousFocus = null;
-  focusTarget.focus({ preventScroll: true });
+  focusPlayback(viewer, focusTarget);
 }
 
 function expandInPage(viewer) {
@@ -72,10 +88,11 @@ function expandInPage(viewer) {
   }
   updateExpansionButtons(viewer, true);
   setStatus(viewer, '돌아가려면 ‘전체화면 닫기’를 눌러 주세요.');
-  viewer.querySelector('[data-close]').focus({ preventScroll: true });
+  focusPlayback(viewer, viewer.querySelector('[data-close]'));
 }
 
-async function closeExpansion() {
+async function closeExpansion(event) {
+  if (event) keyboardExpansion = event.detail === 0;
   if (document.fullscreenElement) {
     try {
       await document.exitFullscreen();
@@ -114,7 +131,8 @@ function playViewer(viewer) {
   viewer.querySelector('.viewer-mount').append(frame);
 }
 
-async function openFullscreen(viewer) {
+async function openFullscreen(viewer, fromKeyboard) {
+  keyboardExpansion = fromKeyboard;
   playViewer(viewer);
   previousFocus = viewer.querySelector('[data-fullscreen]');
   // Request within the click gesture, without awaiting network or runtime loading.
@@ -123,7 +141,7 @@ async function openFullscreen(viewer) {
       await viewer.requestFullscreen();
       expandedViewer = viewer;
       updateExpansionButtons(viewer, true);
-      viewer.querySelector('[data-close]').focus({ preventScroll: true });
+      focusPlayback(viewer, viewer.querySelector('[data-close]'));
       return;
     } catch { /* Browsers without fullscreen permission can expand within the page. */ }
   }
@@ -143,7 +161,7 @@ viewers.forEach(viewer => {
     playViewer(viewer);
     viewer.querySelector('[data-fullscreen]').focus({ preventScroll: true });
   });
-  viewer.querySelector('[data-fullscreen]').addEventListener('click', () => openFullscreen(viewer));
+  viewer.querySelector('[data-fullscreen]').addEventListener('click', event => openFullscreen(viewer, event.detail === 0));
   viewer.querySelector('[data-close]').addEventListener('click', closeExpansion);
   viewer.querySelector('[data-stop]').addEventListener('click', async () => {
     if (expandedViewer === viewer) await closeExpansion();
