@@ -1,18 +1,18 @@
 {
-  "version": "20261114-v1",
+  "version": "20261114-v2",
   "resourceIds": [
     "airship"
   ],
   "files": {
     "loader": {
-      "url": "Build/9b10c6b499b26740b718cd6bdf99e5b0.loader.js",
+      "url": "Build/f7366c73cdfc12d43a6c057a4eebcc7c.loader.js",
       "size": 110344,
-      "sha256": "fad782d22e53f43025f64884c5aac5f9cc2a8286ad0b7e47d03fd6219bf6a607"
+      "sha256": "f3e5abb59bdff3d6fe799c890620ba23024472cafc6bc393c39a68b38d0b3cc8"
     },
     "data": {
-      "url": "Build/8781d58fd5b4fd5a31e60164d4e9e11f.data.unityweb",
-      "size": 20043300,
-      "sha256": "ec57ad5e45f12386ef7ea0866b13ceebf292cd3b988b48e37e8ea095578f5f76"
+      "url": "Build/915edea65dd40511bdb3846f9c2332d4.data.unityweb",
+      "size": 20054824,
+      "sha256": "2e1796647b1b779aa03d1933bff240fd7ccb0c695de4419506454b69a7556173"
     },
     "framework": {
       "url": "Build/b6415d881c3b684ee0a409a8daa11b0b.framework.js.unityweb",
@@ -20,9 +20,9 @@
       "sha256": "2c412aaf8fb748ff9ecc89cd31b77960604bbfcb4aacd02366f043e16a243017"
     },
     "code": {
-      "url": "Build/54759bdfd3cb0ab1ce6fc8336c8a4688.wasm.unityweb",
-      "size": 8327751,
-      "sha256": "d0fb73598eca92d2bb7a803293e5ac605c15542cd1e9eae0a38552b84b483319"
+      "url": "Build/8bd1c619a4642f9e317007a4e6d88711.wasm.unityweb",
+      "size": 8322770,
+      "sha256": "4be967bf10a029a91d3cfd583775a73b53f11de1be75f3401f82cec9cfa3f88d"
     }
   }
 }
