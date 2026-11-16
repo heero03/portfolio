@@ -124,3 +124,6 @@ button{font:inherit;color:inherit;cursor:pointer}button:focus-visible,summary:fo
   .work-jumps{gap:4px 18px;padding-bottom:22px;font-size:11px}
   .work-jumps a{min-height:40px}
 }
+.hero{position:relative}
+.hero-playback-note{position:absolute;left:0;bottom:28px;max-width:100%;font-size:14px;line-height:1.7;color:var(--muted)}
+@media(max-width:720px){.hero-playback-note{position:static}}
